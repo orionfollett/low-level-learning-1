@@ -2,9 +2,8 @@
 #define STACK_H
 
 typedef int* Stack;
-typedef int* (*Alloc)(int);
-
-void hello_world(void);
+typedef void*(Alloc)(unsigned long);
+typedef void(Dealloc)(void*);
 
 /* Creates a new stack initialized to size: size. */
 Stack stack(Alloc alloc, int size);
@@ -17,5 +16,8 @@ int pop(Stack s);
 
 /* Returns the latest value off the stack without popping. */
 int peek(Stack s);
+
+/* Release stacls underlying memory. */
+void destroy_stack(Dealloc, Stack s);
 
 #endif

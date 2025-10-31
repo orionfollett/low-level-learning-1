@@ -1,16 +1,12 @@
 #include "stack.h"
 #include <stdio.h>
 
-void hello_world(void) {
-  printf("hello world\n");
-}
-
 static const int LEN_INDEX = 0;
 static const int SIZE_INDEX = 1;
 
 /* Creates a new stack initialized to size: size. */
 Stack stack(Alloc alloc, int size) {
-  Stack s = (Stack)alloc(size + 2);
+  Stack s = (Stack)alloc((unsigned long)size + 2);
   s[LEN_INDEX] = 0;
   s[SIZE_INDEX] = (int)size;
   return s;

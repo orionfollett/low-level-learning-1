@@ -6,8 +6,7 @@
 TEST("strlen returns length of string") {
   Stack s = stack(malloc, 3);
 
-  ASSERT(strlen("") == 0);
-  ASSERT(strlen("foo") == 3);
+  ASSERT(s[1] == 3);
 }
 
 #endif
