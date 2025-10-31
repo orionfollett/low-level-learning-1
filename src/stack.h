@@ -2,7 +2,7 @@
 #define STACK_H
 
 typedef int* Stack;
-typedef int*(*Alloc)(int);
+typedef int* (*Alloc)(int);
 
 void hello_world(void);
 
