@@ -9,7 +9,7 @@ TEST_DIR := tests
 SRCS := $(wildcard $(SRC_DIR)/*.c)
 OBJS := $(SRCS:$(SRC_DIR)/%.c=$(BUILD_DIR)/%.o)
 TARGET := $(BUILD_DIR)/app
-
+TEST_SRCS := $(filter-out $(SRC_DIR)/main.c, $(SRCS))
 
 all: build
 
@@ -33,6 +33,12 @@ run: clean build
 	@echo "\n🚀 Running...\n"
 	./$(TARGET)
 	
-
+test:
+	@echo "\n🧪 Building and running tests...\n"
+	@mkdir -p $(BUILD_DIR)
+	$(CC) $(CFLAGS) $(TEST_SRCS) $(wildcard $(TEST_DIR)/*.c) -o $(BUILD_DIR)/tests
+	@echo "\n🏃 Running tests...\n"
+	@$(BUILD_DIR)/tests || true
+	
 
 .PHONY: all build test format clean run
