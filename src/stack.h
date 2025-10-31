@@ -2,14 +2,12 @@
 #define STACK_H
 
 typedef int* Stack;
-typedef void*(Alloc)(unsigned long);
-typedef void(Dealloc)(void*);
 
 /* Creates a new stack initialized to size: size. */
-Stack stack(Alloc alloc, int size);
+Stack stack(int size);
 
 /* Pushes a new value onto the stack, returns the modified Stack. */
-Stack push(Alloc alloc, int val);
+Stack push(Stack s, int val);
 
 /* Pops a value off the stack. Modifies stack in place. */
 int pop(Stack s);
@@ -18,6 +16,6 @@ int pop(Stack s);
 int peek(Stack s);
 
 /* Release stacls underlying memory. */
-void destroy_stack(Dealloc, Stack s);
+void destroy_stack(Stack s);
 
 #endif
