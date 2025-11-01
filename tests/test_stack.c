@@ -1,7 +1,7 @@
 #include "../src/stack.h"
 #include "test.h"
 
-void test_stack_ops(void) {
+TEST("Test stack operations") {
   Stack s = stack(0);
   s = push(s, 100);
   ASSERT(peek(s), 100);
