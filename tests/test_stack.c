@@ -1,6 +1,6 @@
 #ifdef HEADERS
 #include "../src/stack.h"
-#include "test.h"
+#include "utils.h"
 #endif
 
 #ifdef TESTS
