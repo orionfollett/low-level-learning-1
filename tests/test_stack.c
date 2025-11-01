@@ -1,6 +1,9 @@
+#ifdef HEADERS
 #include "../src/stack.h"
 #include "test.h"
+#endif
 
+#ifdef TESTS
 TEST("Test stack operations") {
   Stack s = stack(0);
   s = push(s, 100);
@@ -24,3 +27,4 @@ TEST("Test stack operations") {
   ASSERT(pop(s2), 200);
   ASSERT(pop(s2), 100);
 }
+#endif

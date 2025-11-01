@@ -7,10 +7,17 @@ just need macro to print file and line on failure but no need to abort
 main function
 
 */
-#include <stdio.h>
-#include "test_stack.c"
+
+#define HEADERS
+#include "test_all.c"
+#undef HEADERS
 
 int main(void) {
-  printf("Stack operations\n");
-  test_stack_ops();
+    const char* test = "";
+
+#define TESTS
+#include "test_all.c"
+#undef TESTS
+    printf("\n");
+
 }
