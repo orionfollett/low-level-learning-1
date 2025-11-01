@@ -7,7 +7,7 @@ typedef int* Stack;
 Stack stack(int size);
 
 /* Pushes a new value onto the stack, returns the modified Stack. */
-Stack push(Stack s, int val);
+Stack stack_push(Stack s, int val);
 
 /* Pops a value off the stack. Modifies stack in place. */
 int stack_pop(Stack s);
