@@ -6,14 +6,12 @@ SRC_DIR := src
 BUILD_DIR := build
 TEST_DIR := tests
 
-SRCS := $(wildcard $(SRC_DIR)/*.c)
-OBJS := $(SRCS:$(SRC_DIR)/%.c=$(BUILD_DIR)/%.o)
 TARGET := $(BUILD_DIR)/app
-TEST_SRCS := $(filter-out $(SRC_DIR)/main.c, $(SRCS))
 
-all: build
 
 build: $(TARGET)
+	@mkdir -p $(BUILD_DIR)
+	$(CC) $(CFLAGS) 
 
 $(TARGET): $(OBJS)
 	@mkdir -p $(BUILD_DIR)

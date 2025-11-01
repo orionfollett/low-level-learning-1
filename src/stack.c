@@ -1,6 +1,6 @@
 #include "stack.h"
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 static const int LEN_INDEX = 0;
 static const int SIZE_INDEX = 1;
@@ -19,7 +19,7 @@ Stack push(Stack s, int val) {
   int len = s[LEN_INDEX];
 
   if (len >= size) {
-    size = (size+1) * 2;
+    size = (size + 1) * 2;
     s = (Stack)realloc(s, ((unsigned long)size + 2) * sizeof(int));
     s[SIZE_INDEX] = size;
   }
@@ -32,7 +32,7 @@ Stack push(Stack s, int val) {
 /* Pops a value off the stack. Modifies stack in place. */
 int pop(Stack s) {
   s[LEN_INDEX] = s[LEN_INDEX] - 1;
-  return s[s[LEN_INDEX]+ 2];
+  return s[s[LEN_INDEX] + 2];
 }
 
 /* Returns the latest value off the stack without popping. */
