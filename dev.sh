@@ -24,16 +24,20 @@ TEST_DIR=tests
 
 TARGET=$BUILD_DIR/app
 
-SRC=(src/*.c src/*.c tests/*.c)
+SRC=(src/*.c tests/*.c)
 
 test(){
     echo "\n🧪 Building and running tests...\n"
     mkdir -p $BUILD_DIR
     $CC $CFLAGS $SRC -o $TARGET
-
-    # run
+    ./build/app
 }
 
 fmt(){
     clang-format --style Chromium -i $SRC_DIR/*.c $SRC_DIR/*.h $TEST_DIR/*.c 2>/dev/null || true
+}
+
+clean(){
+    rm -rf build/
+    mkdir -p build
 }
