@@ -25,7 +25,7 @@ TEST_DIR=tests
 TARGET=$BUILD_DIR/app
 
 test() {
-    echo "\n🧪 Building and running tests...\n"
+    echo "\n---Building and running tests---\n"
     mkdir -p $BUILD_DIR
     $CC $CFLAGS $SRC_DIR/*.c $TEST_DIR/*.c -o $TARGET
     ./build/app
