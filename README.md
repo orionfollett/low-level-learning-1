@@ -35,6 +35,7 @@ Projects:
     - Emulate a subset of ARM assembly using C
     - Rewrite assembly programs from above using emulator
 
+Level 2, to be continued...
 4. Simple interpreted language
 5. Web server
 6. database
