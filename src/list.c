@@ -23,13 +23,18 @@ List list_append(List list, int val) {
     if(size <= len){
         int new_size = size * 2;
         list[SIZE_INDEX] = new_size;
-        list = realloc(list, ((unsigned long) 2 + new_size) * sizeof(int));
+        list = realloc(list, (unsigned long) (2 + new_size) * sizeof(int));
     }
 
     list[len + 2] = val;
+    list[LEN_INDEX] = len + 1;
     return list;
 }
 
 int list_get(List list, int index) {
     return list[index + 2];
+}
+
+int list_len(List list) {
+    return list[LEN_INDEX];
 }

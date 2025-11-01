@@ -12,6 +12,7 @@ List list_append(List list, int val);
 
 int list_get(List list, int index);
 
+int list_len(List list);
 /*
 insert, update, delete
 sort
