@@ -30,17 +30,17 @@ Stack push(Stack s, int val) {
 }
 
 /* Pops a value off the stack. Modifies stack in place. */
-int pop(Stack s) {
+int stack_pop(Stack s) {
   s[LEN_INDEX] = s[LEN_INDEX] - 1;
   return s[s[LEN_INDEX] + 2];
 }
 
-/* Returns the latest value off the stack without popping. */
-int peek(Stack s) {
+/* Returns the latest value off the stack without stack_popping. */
+int stack_peek(Stack s) {
   return s[s[LEN_INDEX] + 2 - 1];
 }
 
 /* Deallocate memory associated with stack. */
-void destroy_stack(Stack s) {
+void stack_destroy(Stack s) {
   free(s);
 }

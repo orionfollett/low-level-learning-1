@@ -10,12 +10,12 @@ Stack stack(int size);
 Stack push(Stack s, int val);
 
 /* Pops a value off the stack. Modifies stack in place. */
-int pop(Stack s);
+int stack_pop(Stack s);
 
-/* Returns the latest value off the stack without popping. */
-int peek(Stack s);
+/* Returns the latest value off the stack without poping. */
+int stack_peek(Stack s);
 
 /* Release stacls underlying memory. */
-void destroy_stack(Stack s);
+void stack_destroy(Stack s);
 
 #endif
