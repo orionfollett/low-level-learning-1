@@ -38,3 +38,11 @@ Projects:
 4. Simple interpreted language
 5. Web server
 6. database
+
+# How to run
+
+```
+source dev.sh
+test
+```
+
