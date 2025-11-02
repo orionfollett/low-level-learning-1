@@ -2,7 +2,7 @@
 #define ASM_H
 
 int asm_add(int x, int y);
-int asm_fib(int n);
+long asm_fib(int n);
 void asm_sort(int* lis, int len);
 
 #endif

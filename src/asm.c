@@ -7,10 +7,23 @@ int asm_add(int x, int y) {
   return sum;
 }
 
-int asm_fib(int n) {
+long asm_fib(int n) {
     /*generate the nth fibonacci number.*/
-    int result;
-    asm volatile("add %w0, %w1, 1" : "=r"(result) : "r"(n));
+    long result;
+    
+    /*
+    need:
+    - loop counter is n
+    - goto
+    - 
+    - add,
+    - 
+    */
+    asm volatile(
+        "add %w0, %w1, #1"
+        : "=r"(result) : "r"(n)
+    );
+    
     return result;
 }
 
