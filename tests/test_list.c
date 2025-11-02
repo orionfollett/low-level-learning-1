@@ -59,4 +59,21 @@ TEST("Test list update.") {
   list_update(l, list_len(l), 99);
   ASSERT(list_get(l, list_len(l)), 99);
 }
+
+TEST("Test list delete.") {
+  List l = list(0);
+  ASSERT(list_len(l), 0);
+
+  l = list_append(l, 100);
+  l = list_append(l, 200);
+  l = list_append(l, 300);
+
+  list_delete(l, 0);
+  ASSERT(list_get(l, 0), 200);
+  ASSERT(list_get(l, 1), 300);
+
+  list_delete(l, 1);
+  ASSERT(list_get(l, 0), 200);
+}
+
 #endif

@@ -15,10 +15,10 @@ int list_len(List list);
 
 List list_insert(List list, int index, int val);
 
-void list_update(List list, int index, int val);
+List list_update(List list, int index, int val);
 
 /* returns the deleted value */
-int list_delete(List list, int index);
+List list_delete(List list, int index);
 
 int find(List list, int val);
 

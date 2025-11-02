@@ -63,11 +63,21 @@ List list_insert(List list, int index, int val) {
   return list;
 }
 
-void list_update(List list, int index, int val) {
+List list_update(List list, int index, int val) {
   index = index + 2;
   list[index] = val;
+  return list;
 }
 
-int list_delete(List list, int index);
+List list_delete(List list, int index) {
+  index = index + 2;
+  int len = list[LEN_INDEX] + 2;
+
+  int i = index + 1;
+  for (; i < len; i++) {
+    list[i - 1] = list[i];
+  }
+  return list;
+}
 
 int find(List list, int val);
