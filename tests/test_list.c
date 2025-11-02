@@ -26,17 +26,17 @@ TEST("Test list insert.") {
   l = list_append(l, 300);
 
   l = list_insert(l, 0, 99);
-  ASSERT(list_get(0), 99);
-  ASSERT(list_get(1), 100);
-  ASSERT(list_get(2), 200);
-  ASSERT(list_get(3), 300);
+  ASSERT(list_get(l, 0), 99);
+  ASSERT(list_get(l, 1), 100);
+  ASSERT(list_get(l, 2), 200);
+  ASSERT(list_get(l, 3), 300);
 
   l = list_insert(l, 2, 999);
 
-  ASSERT(list_get(0), 99);
-  ASSERT(list_get(1), 100);
-  ASSERT(list_get(2), 999);
-  ASSERT(list_get(3), 200);
-  ASSERT(list_get(4), 300);
+  ASSERT(list_get(l, 0), 99);
+  ASSERT(list_get(l, 1), 100);
+  ASSERT(list_get(l, 2), 999);
+  ASSERT(list_get(l, 3), 200);
+  ASSERT(list_get(l, 4), 300);
 }
 #endif
