@@ -14,7 +14,8 @@ CFLAGS=(
     -fsanitize=address
     -fsanitize=undefined
     -g
-    -std=gnu89
+    -std=gnu89 # needed for inline asm
+    # -std=c89
     -O2
 )
 
