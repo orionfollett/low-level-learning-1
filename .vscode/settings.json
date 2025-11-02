@@ -1,7 +1,8 @@
 {
     "files.associations": {
         "stdio.h": "c",
-        "stack.h": "c"
+        "stack.h": "c",
+        "asm.h": "c"
     },
     // Use C89 for IntelliSense and syntax checking
     "C_Cpp.default.cStandard": "c89",
