@@ -14,7 +14,7 @@ CFLAGS=(
     -fsanitize=address
     -fsanitize=undefined
     -g
-    -std=c89
+    -std=gnu89
     -O2
 )
 
@@ -38,9 +38,4 @@ fmt() {
 clean() {
     rm -rf build/
     mkdir -p build
-}
-
-asm() {
-    clang -target arm64-apple-macos -o $BUILD_DIR/asm-app asm/main.s
-    ./build/asm-app
 }

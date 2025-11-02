@@ -25,7 +25,7 @@ Projects:
     - X list
     - X hashmap
 
-2. ARM Assembly 
+2. ARM Assembly
     - Fibonacci sequence generator
     - List sorter
     - Hash function
@@ -46,11 +46,3 @@ Run C code:
 source dev.sh
 test
 ```
-
-Run ASM code (requires ARM device):
-```
-source dev.sh
-asm
-```
-
-
