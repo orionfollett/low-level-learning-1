@@ -13,7 +13,7 @@ Map map(unsigned long size) {
 }
 
 Map map_set(Map map, int key, int val) {
-  int index = _hash(key, map.size);
+  int index = _hash(key, (int)map.size);
 
   MapNode* node = map.backing_array[index];
 
@@ -53,7 +53,7 @@ Map map_set(Map map, int key, int val) {
 }
 
 ResultInt map_get(Map map, int key) {
-  int index = _hash(key, map.size);
+  int index = _hash(key, (int)map.size);
   ResultInt r;
   MapNode* node = map.backing_array[index];
   while (node != 0) {
