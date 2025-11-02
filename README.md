@@ -21,9 +21,9 @@ C has several advantages:
 Projects:
 
 1. Implement common data structures in C
-    X stack
-    X list
-    - hashmap
+    - X stack
+    - X list
+    - X hashmap
 
 2. ARM Assembly 
     - Fibonacci sequence generator
@@ -41,8 +41,16 @@ Level 2, to be continued...
 
 # How to run
 
+Run C code:
 ```
 source dev.sh
 test
 ```
+
+Run ASM code (requires ARM device):
+```
+source dev.sh
+asm
+```
+
 

@@ -39,3 +39,8 @@ clean() {
     rm -rf build/
     mkdir -p build
 }
+
+asm() {
+    clang -target arm64-apple-macos -o $BUILD_DIR/asm-app asm/main.s
+    ./build/asm-app
+}
