@@ -21,8 +21,8 @@ C has several advantages:
 Projects:
 
 1. Implement common data structures in C
-    - stack
-    - list
+    X stack
+    X list
     - linked list
     - hashmap
 

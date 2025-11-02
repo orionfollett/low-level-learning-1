@@ -21,9 +21,4 @@ List list_delete(List list, int index);
 
 int list_find(List list, int val);
 
-/*
-remove_all
-sort
-*/
-
 #endif
