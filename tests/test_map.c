@@ -4,30 +4,32 @@
 #endif
 
 #ifdef TESTS
-TEST("Test map operations") {
+TEST("Test map get and set.") {
   Map m = map(3);
-  m = map_set(m, 0, 100);
-  m = map_set(m, 1, 200);
-  m = map_set(m, 2, 300);
-  m = map_set(m, 3, 400);
+  int i = 0;
+  for(; i< 10; i++){
+    m = map_set(m, i, 100*i);
+  }
 
-  ResultInt r0 = map_get(m, 0);
-  ASSERT(r0.tag, OK);
-  ASSERT(r0.ok, 100);
+  ResultInt r;
+  for(; i< 10; i++){
+    r = map_get(m, i);
+    ASSERT(r.tag, OK);
+    ASSERT(r.ok, i*100);
+  }
 
-  ResultInt r1 = map_get(m, 1);
-  ASSERT(r1.tag, OK);
-  ASSERT(r1.ok, 200);
+  ResultInt err = map_get(m, 99);
+  ASSERT(err.tag, ERR);
+}
 
-  ResultInt r2 = map_get(m, 2);
-  ASSERT(r2.tag, OK);
-  ASSERT(r2.ok, 300);
+TEST("Test map pop.") {
+  Map m = map(3);
+  int i = 0;
+  for(; i< 10; i++){
+    m = map_set(m, i, 100*i);
+  }
 
-  ResultInt r3 = map_get(m, 3);
-  ASSERT(r3.tag, OK);
-  ASSERT(r3.ok, 400);
+  
 
-  ResultInt r4 = map_get(m, 4);
-  ASSERT(r4.tag, ERR);
 }
 #endif

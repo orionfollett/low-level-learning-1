@@ -74,7 +74,6 @@ ResultInt map_pop(Map map, int key) {
   ResultInt r;
   MapNode* node = map.backing_array[index];
   if (node == 0) {
-    ResultInt r;
     r.tag = ERR;
     r.err = "Not found";
     return r;
@@ -82,7 +81,6 @@ ResultInt map_pop(Map map, int key) {
 
   if (node->key == key) {
     map.backing_array[index] = node->next;
-    ResultInt r;
     r.tag = OK;
     r.ok = node->val;
     return r;
@@ -90,7 +88,6 @@ ResultInt map_pop(Map map, int key) {
 
   while (node->next != 0) {
     if (node->next->key == key) {
-      ResultInt r;
       r.tag = OK;
       r.ok = node->next->val;
 
@@ -101,7 +98,6 @@ ResultInt map_pop(Map map, int key) {
     node = node->next;
   }
 
-  ResultInt r;
   r.tag = ERR;
   r.err = "Not found";
   return r;
