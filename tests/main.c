@@ -13,11 +13,10 @@ main function
 #undef HEADERS
 
 int main(void) {
-    const char* test = "";
+  const char* test = "";
 
 #define TESTS
 #include "test_all.c"
 #undef TESTS
-    printf("\n");
-
+  printf("\n");
 }

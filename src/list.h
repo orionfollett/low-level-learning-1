@@ -1,7 +1,6 @@
 #ifndef LIST_H
 #define LIST_H
 
-
 typedef int* List;
 
 List list(unsigned long size);
@@ -13,8 +12,18 @@ List list_append(List list, int val);
 int list_get(List list, int index);
 
 int list_len(List list);
+
+List list_insert(List list, int index, int val);
+
+void list_update(List list, int index, int val);
+
+/* returns the deleted value */
+int list_delete(List list, int index);
+
+int find(List list, int val);
+
 /*
-insert, update, delete
+remove_all
 sort
 */
 
