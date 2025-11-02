@@ -44,4 +44,19 @@ TEST("Test list insert.") {
   ASSERT(list_get(l, 4), 9999);
   ASSERT(list_get(l, 5), 300);
 }
+
+TEST("Test list update.") {
+  List l = list(0);
+  ASSERT(list_len(l), 0);
+
+  l = list_append(l, 100);
+  l = list_append(l, 200);
+  l = list_append(l, 300);
+
+  list_update(l, 0, 9);
+  ASSERT(list_get(l, 0), 9);
+
+  list_update(l, list_len(l), 99);
+  ASSERT(list_get(l, list_len(l)), 99);
+}
 #endif

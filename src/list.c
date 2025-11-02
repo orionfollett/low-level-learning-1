@@ -63,7 +63,10 @@ List list_insert(List list, int index, int val) {
   return list;
 }
 
-void list_update(List list, int index, int val);
+void list_update(List list, int index, int val) {
+  index = index + 2;
+  list[index] = val;
+}
 
 int list_delete(List list, int index);
 
