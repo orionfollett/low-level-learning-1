@@ -90,8 +90,3 @@ int list_find(List list, int val) {
   }
   return -1;
 }
-
-List list_remove(List list, int val) {
-    // loop through and count occurences
-    // 1 x 2 x 3 x 4
-}

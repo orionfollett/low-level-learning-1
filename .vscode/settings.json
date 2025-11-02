@@ -2,5 +2,8 @@
     "files.associations": {
         "stdio.h": "c",
         "stack.h": "c"
-    }
+    },
+    // Use C89 for IntelliSense and syntax checking
+    "C_Cpp.default.cStandard": "c89",
+    "C_Cpp.default.intelliSenseMode": "gcc-x64",
 }
