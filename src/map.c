@@ -69,6 +69,42 @@ ResultInt map_get(Map map, int key) {
   return r;
 }
 
-ResultInt map_pop(Map map, int key);
+ResultInt map_pop(Map map, int key) {
+  int index = _hash(key, (int)map.size);
+  ResultInt r;
+  MapNode* node = map.backing_array[index];
+  if (node == 0) {
+    ResultInt r;
+    r.tag = ERR;
+    r.err = "Not found";
+    return r;
+  }
+
+  if (node->key == key) {
+    map.backing_array[index] = node->next;
+    ResultInt r;
+    r.tag = OK;
+    r.ok = node->val;
+    return r;
+  }
+
+  while (node->next != 0) {
+    if (node->next->key == key) {
+      ResultInt r;
+      r.tag = OK;
+      r.ok = node->next->val;
+
+      /* Remove this node from linked list before returning. */
+      node->next = node->next->next;
+      return r;
+    }
+    node = node->next;
+  }
+
+  ResultInt r;
+  r.tag = ERR;
+  r.err = "Not found";
+  return r;
+}
 
 void map_destroy(Map map);
