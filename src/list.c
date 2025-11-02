@@ -48,7 +48,7 @@ List list_insert(List list, int index, int val) {
   if (len >= size) {
     unsigned long new_size = (unsigned long)(size + 1) * 2;
     list = realloc(list, new_size * sizeof(int));
-    list[SIZE_INDEX] = (int) new_size;
+    list[SIZE_INDEX] = (int)new_size;
   }
   list[LEN_INDEX] = len + 1;
 
@@ -56,8 +56,8 @@ List list_insert(List list, int index, int val) {
   index = index + 2;
   int i = index;
   for (; i < len + 1; i++) {
-    int temp = list[index];
-    list[index] = val;
+    int temp = list[i];
+    list[i] = val;
     val = temp;
   }
   return list;

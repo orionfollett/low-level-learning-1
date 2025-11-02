@@ -27,6 +27,7 @@ TEST("Test list insert.") {
 
   l = list_insert(l, 0, 99);
   ASSERT(list_get(l, 0), 99);
+
   ASSERT(list_get(l, 1), 100);
   ASSERT(list_get(l, 2), 200);
   ASSERT(list_get(l, 3), 300);
@@ -38,5 +39,9 @@ TEST("Test list insert.") {
   ASSERT(list_get(l, 2), 999);
   ASSERT(list_get(l, 3), 200);
   ASSERT(list_get(l, 4), 300);
+
+  l = list_insert(l, 4, 9999);
+  ASSERT(list_get(l, 4), 9999);
+  ASSERT(list_get(l, 5), 300);
 }
 #endif
