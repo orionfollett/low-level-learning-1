@@ -1,4 +1,4 @@
-# Low Level Learning Course 1
+# Low Level Learning Self Made Course 1
 
 Goals:
 1. Learn to be productive in a low level language.
