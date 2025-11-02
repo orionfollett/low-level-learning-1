@@ -76,4 +76,18 @@ TEST("Test list delete.") {
   ASSERT(list_get(l, 0), 200);
 }
 
+TEST("Test list find.") {
+  List l = list(0);
+  ASSERT(list_len(l), 0);
+
+  l = list_append(l, 100);
+  l = list_append(l, 200);
+  l = list_append(l, 300);
+
+  ASSERT(list_find(l, 100), 0);
+  ASSERT(list_find(l, 200), 1);
+  ASSERT(list_find(l, 300), 2);
+  ASSERT(list_find(l, -100), -1);
+}
+
 #endif

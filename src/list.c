@@ -80,4 +80,13 @@ List list_delete(List list, int index) {
   return list;
 }
 
-int find(List list, int val);
+int list_find(List list, int val) {
+  int len = list[LEN_INDEX] + 2;
+  int i = 2;
+  for (; i < len; i++) {
+    if (list[i] == val) {
+      return i - 2;
+    }
+  }
+  return -1;
+}

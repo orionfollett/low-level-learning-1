@@ -17,10 +17,9 @@ List list_insert(List list, int index, int val);
 
 List list_update(List list, int index, int val);
 
-/* returns the deleted value */
 List list_delete(List list, int index);
 
-int find(List list, int val);
+int list_find(List list, int val);
 
 /*
 remove_all
