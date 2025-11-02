@@ -21,7 +21,7 @@ List list_append(List list, int val) {
     
     
     if(size <= len){
-        int new_size = size * 2;
+        int new_size = (1+size) * 2;
         list[SIZE_INDEX] = new_size;
         list = realloc(list, (unsigned long) (2 + new_size) * sizeof(int));
     }
