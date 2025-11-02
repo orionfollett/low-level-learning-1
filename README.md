@@ -23,8 +23,8 @@ Projects:
 1. Implement common data structures in C
     X stack
     X list
-    - linked list
-    - hashmap
+    - hashmap (simple, static size)
+    - hashmap (resizes itself)
 
 2. ARM Assembly 
     - Fibonacci sequence generator
