@@ -1,15 +1,11 @@
 #include "asm.h"
 #include <stdio.h>
 
-int asm_add(int x, int y){
-    int sum;
+int asm_add(int x, int y) {
+  int sum;
 
-    asm volatile (
-        "add %w0, %w1, %w2\n\t"
-        : "=r" (sum)
-        : "r" (x), "r" (y)
-    );
-    return sum;
+  asm volatile("add %w0, %w1, %w2\n\t" : "=r"(sum) : "r"(x), "r"(y));
+  return sum;
 }
 
 int asm_fib(int n);
