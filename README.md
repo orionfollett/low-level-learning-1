@@ -26,7 +26,7 @@ Projects:
     - X hashmap
 
 2. ARM Assembly
-    - Fibonacci sequence generator
+    - X Fibonacci sequence generator
     - List sorter
     - Hash function
 

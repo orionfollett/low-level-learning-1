@@ -34,7 +34,7 @@ TEST("Test fib") {
   ASSERT(asm_fib(5), 8);
   ASSERT(asm_fib(6), 13);
   ASSERT(asm_fib(7), 21);
-  ASSERT(asm_fib(50), 20365011074);  
+  ASSERT(asm_fib(50), 20365011074);
 }
 
 #endif

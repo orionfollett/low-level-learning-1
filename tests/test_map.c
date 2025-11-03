@@ -20,6 +20,7 @@ TEST("Test map get and set.") {
 
   ResultInt err = map_get(m, 99);
   ASSERT(err.tag, ERR);
+  map_destroy(m);
 }
 
 TEST("Test map pop.") {
@@ -52,5 +53,7 @@ TEST("Test map pop.") {
 
   r0 = map_get(m, 0);
   ASSERT(r0.tag, ERR);
+
+  map_destroy(m);
 }
 #endif

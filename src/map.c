@@ -103,4 +103,19 @@ ResultInt map_pop(Map map, int key) {
   return r;
 }
 
-void map_destroy(Map map);
+void map_destroy(Map map) {
+  /*walk through each linked list, freeing each one
+   then free each root node
+   then free the array*/
+
+  int i = 0;
+  for (; i < (int)map.size; i++) {
+    MapNode* node = map.backing_array[i];
+    while (node != 0) {
+      MapNode* old = node;
+      node = old->next;
+      free(old);
+    }
+  }
+  free(map.backing_array);
+}
