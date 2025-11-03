@@ -14,8 +14,7 @@ CFLAGS=(
     -fsanitize=address
     -fsanitize=undefined
     -g
-    -std=gnu89 # needed for inline asm, this is what the OG linux kernel used though so thats cool
-    # -std=c89
+    -std=c89
     -O2
 )
 
