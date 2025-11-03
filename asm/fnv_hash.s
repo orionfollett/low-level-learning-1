@@ -20,17 +20,20 @@ _asm_fnv_hash:
 
     // addr of last byte to load
     add x1, x1, x0
-
+    mov x4, #97
+    mov x3, #113
     loop:
 
         // load first byte
-        ldrb x2, [x0] 
+        ldrb w2, [x0]
 
         // increment address
         add x0, x0, #1
 
-        mul x3, x3, #1099511628211
-        xor x3, x3, x2
+        mul x3, x3, x4
+        // extend to wider register
+        uxtb x2, w2
+        eor x3, x3, x2
         
         
         // check loop end

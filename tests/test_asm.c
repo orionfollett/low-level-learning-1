@@ -39,7 +39,11 @@ TEST("Test fib") {
 
 TEST("Test asm fnc hash") {
   long r = asm_fnv_hash("hello", 5);
-  printf("HASH %i\n", (int)r);
+  long r2 = asm_fnv_hash("hello", 5);
+  long r3 = asm_fnv_hash("goodbye", 7);
+
+  ASSERT(r, r2);
+  ASSERT(r3 != r2, 1);
 }
 
 #endif
