@@ -26,19 +26,22 @@ TEST_DIR=tests
 
 TARGET=$BUILD_DIR/app
 
-test() {
-    echo "\n---Building and running tests---\n"
-    mkdir -p $BUILD_DIR
-    $CC $CFLAGS -c $ASM_DIR/*.s
-    $CC $CFLAGS $SRC_DIR/*.c $TEST_DIR/*.c -o $TARGET
-    ./build/app
-}
-
 fmt() {
     clang-format --style Chromium -i $SRC_DIR/*.c $SRC_DIR/*.h $TEST_DIR/*.c 2>/dev/null || true
 }
 
 clean() {
-    rm -rf build/
-    mkdir -p build
+    mkdir -p $BUILD_DIR
+    rm -rf $BUILD_DIR
+    mkdir -p $BUILD_DIR
+}
+
+test() {
+    clean
+    echo "\n---Building and running tests---\n"
+    mkdir -p $BUILD_DIR
+    $CC $CFLAGS -c $ASM_DIR/*.s
+    mv *.o $BUILD_DIR/
+    $CC $CFLAGS $SRC_DIR/*.c $TEST_DIR/*.c $BUILD_DIR/*.o -o $TARGET
+    ./build/app
 }

@@ -1,5 +1,4 @@
-.global asm_add
-.type asm_add, %function
+.global _asm_add
 
 asm_add:
     // x0 is return value

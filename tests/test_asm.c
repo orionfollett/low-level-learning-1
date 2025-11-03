@@ -11,17 +11,18 @@ TEST("Test inline asm add"){
 
 /*
 TEST("Test inline asm fib"){
-    // ASSERT(asm_fib(0), 1);
-    // ASSERT(asm_fib(1), 1);
-    // ASSERT(asm_fib(2), 3);
+    ASSERT(asm_fib(0), 1);
+    ASSERT(asm_fib(1), 1);
+    ASSERT(asm_fib(2), 3);
     ASSERT(asm_fib(3), 6);
-    // ASSERT(asm_fib(4), 10);
-    // ASSERT(asm_fib(5), 15);
-    // ASSERT(asm_fib(100), 4950);
-    // ASSERT(asm_fib(10000000), 49999995000000);
-
-    /*Python takes 2.84 sec on this one*/
- /*   ASSERT(asm_fib(99999999), 4999999850000001);
-}
+    ASSERT(asm_fib(4), 10);
+    ASSERT(asm_fib(5), 15);
+    ASSERT(asm_fib(100), 4950);
+    ASSERT(asm_fib(10000000), 49999995000000);
 */
+    /*Python takes 2.84 sec on this one*/
+    /*
+    ASSERT(asm_fib(99999999), 4999999850000001);
+}*/
+
 #endif
