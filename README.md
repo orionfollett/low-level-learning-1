@@ -27,8 +27,8 @@ Projects:
 
 2. ARM Assembly
     - X Fibonacci sequence generator
-    - List sorter
     - Hash function
+    - List sorter
 
 3. ARM Emulator
     - Emulate a subset of ARM assembly using C

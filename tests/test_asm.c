@@ -37,4 +37,9 @@ TEST("Test fib") {
   ASSERT(asm_fib(50), 20365011074);
 }
 
+TEST("Test asm fnc hash") {
+  long r = asm_fnv_hash("hello", 5);
+  printf("HASH %i\n", (int)r);
+}
+
 #endif
