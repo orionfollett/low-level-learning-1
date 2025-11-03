@@ -27,6 +27,7 @@ TEST("Test add seq") {
 
 TEST("Test fib") {
   // ASSERT(asm_fib(0), 1);
+
   ASSERT(asm_fib(1), 1);
   ASSERT(asm_fib(2), 2);
   ASSERT(asm_fib(3), 3);
@@ -35,6 +36,8 @@ TEST("Test fib") {
   ASSERT(asm_fib(6), 13);
   ASSERT(asm_fib(7), 21);
   ASSERT(asm_fib(50), 20365011074);
+
+  ASSERT(asm_fib(0), 1);
 }
 
 #endif
