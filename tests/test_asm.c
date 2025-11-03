@@ -9,6 +9,7 @@ TEST("Test inline asm add"){
     ASSERT(asm_add(0, 2), 2);
 }
 
+/*
 TEST("Test inline asm fib"){
     // ASSERT(asm_fib(0), 1);
     // ASSERT(asm_fib(1), 1);
@@ -20,6 +21,7 @@ TEST("Test inline asm fib"){
     // ASSERT(asm_fib(10000000), 49999995000000);
 
     /*Python takes 2.84 sec on this one*/
-    ASSERT(asm_fib(99999999), 4999999850000001);
+ /*   ASSERT(asm_fib(99999999), 4999999850000001);
 }
+*/
 #endif

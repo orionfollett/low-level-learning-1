@@ -20,6 +20,7 @@ CFLAGS=(
 )
 
 SRC_DIR=src
+ASM_DIR=asm
 BUILD_DIR=build
 TEST_DIR=tests
 
@@ -28,6 +29,7 @@ TARGET=$BUILD_DIR/app
 test() {
     echo "\n---Building and running tests---\n"
     mkdir -p $BUILD_DIR
+    $CC $CFLAGS -c $ASM_DIR/*.s
     $CC $CFLAGS $SRC_DIR/*.c $TEST_DIR/*.c -o $TARGET
     ./build/app
 }
