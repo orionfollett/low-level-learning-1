@@ -6,6 +6,12 @@ _asm_fnv_hash:
     // x1 is len of string
 
     // we return a number
+    
+    // x0 is the addr to the next char to read
+    // x1 is max byte addr to read
+    // x2 holds loaded bytes
+    // x3 holds result
+
 
     /*
     algorithm fnv-1 is
@@ -43,9 +49,4 @@ _asm_fnv_hash:
     mov x0, x3
     ret
 
-
-    // x0 is the addr to the next char to read
-    // x1 is max byte addr to read
-    // x2 holds loaded bytes
-    // x3 holds result
 
