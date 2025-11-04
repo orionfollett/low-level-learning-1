@@ -48,9 +48,8 @@ TEST("Test asm fnc hash") {
 
 TEST("Test asm sort function") {
   int lis[] = {2, 1, 4, 3};
-  asm_sort(lis, 4);
-
   int expected[] = {1, 2, 3, 4};
+  asm_sort(lis, 4);
   
   int i = 0;
   for(; i < 4; i++){
