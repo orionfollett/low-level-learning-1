@@ -30,13 +30,20 @@ typedef enum {
   REG_ALIAS
 } StmtTypeT;
 
-int execute_oarm(const char* code, int memory[1024]) {
+int oarm(const char* code, int memory[1024]) {
   int registers[10] = {0};
   /*int cmp_bit = 0;*/
   printf("%s", code);
   printf("%i", memory[0]);
   return registers[0];
+
   /*
+    Things Ill probably need:
+    - string struct
+        - string compare
+    - string map (that uses the aforementioned string class)
+
+
   Interpreter Stages:
   - clean up whitespace, make all lower case
   - go line by line, parse statements into tagged union and add to list

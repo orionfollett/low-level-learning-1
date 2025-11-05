@@ -20,6 +20,6 @@ bgt <label_name>
 bge <label_name>
 */
 
-int execute_oarm(const char* code, int memory[1024]);
+int oarm(const char* code, int memory[1024]);
 
 #endif
