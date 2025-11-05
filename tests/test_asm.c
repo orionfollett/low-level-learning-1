@@ -46,16 +46,25 @@ TEST("Test asm fnc hash") {
   ASSERT(r3 != r2, 1);
 }
 
-TEST("Test asm sort function") {
-  /*long lis[] = {2, 1, 4, 3};*/
+TEST("Test asm sort function") {  
   long lis[] = {4, 3, 2, 1};
-  /*int expected[] = {1, 2, 3, 4};*/
+  int expected[] = {1, 2, 3, 4};
   asm_sort(lis, 4);
 
   int i = 0;
   for (; i < 4; i++) {
-    /*ASSERT(lis[i], expected[i]);*/
-    printf("%i ", (int)lis[i]);
+    ASSERT(lis[i], expected[i]);
+  }
+}
+
+TEST("Test asm sort function") {  
+  long lis[] = {3, 2, 4, 1};
+  int expected[] = {1, 2, 3, 4};
+  asm_sort(lis, 4);
+
+  int i = 0;
+  for (; i < 4; i++) {
+    ASSERT(lis[i], expected[i]);
   }
 }
 
