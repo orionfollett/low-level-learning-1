@@ -14,13 +14,13 @@ temp .req x9
 _asm_sort:
     
     // convert len to bytes, multiply by 4
-    lsl len, len, #2
+    lsl len, len, #3
     add last_byte, len, start
     
     mov i, start
     outer:
         cmp last_byte, i
-        ble exit
+        blt exit
 
         ldr curr_i, [i]
         mov min_index, i
@@ -30,7 +30,7 @@ _asm_sort:
 
         inner:    
             cmp j, last_byte
-            bge inner_exit
+            bgt inner_exit
 
             ldr curr_j, [j]
 
