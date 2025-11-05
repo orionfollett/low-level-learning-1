@@ -46,7 +46,7 @@ TEST("Test asm fnc hash") {
   ASSERT(r3 != r2, 1);
 }
 
-TEST("Test asm sort function") {  
+TEST("Test asm sort function") {
   long lis[] = {4, 3, 2, 1};
   int expected[] = {1, 2, 3, 4};
   asm_sort(lis, 4);
@@ -57,7 +57,7 @@ TEST("Test asm sort function") {
   }
 }
 
-TEST("Test asm sort function") {  
+TEST("Test asm sort function") {
   long lis[] = {3, 2, 4, 1};
   int expected[] = {1, 2, 3, 4};
   asm_sort(lis, 4);
