@@ -1,5 +1,5 @@
 #include "oarm.h"
-
+#include <stdio.h>
 /*
 commands:
 <name> .req <register_name>
@@ -32,8 +32,9 @@ typedef enum {
 
 int execute_oarm(const char* code, int memory[1024]) {
   int registers[10] = {0};
-  int cmp_bit = 0;
-
+  /*int cmp_bit = 0;*/
+  printf("%s", code);
+  printf("%i", memory[0]);
   return registers[0];
   /*
   Interpreter Stages:
