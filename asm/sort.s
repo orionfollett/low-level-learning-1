@@ -18,40 +18,26 @@ _asm_sort:
     add last_byte, len, start
     
     mov i, start
+
+    ldr curr_i, [i]    
+    mov min_index, i
+    mov min, curr_i
+    
     outer:
         cmp last_byte, i
         ble exit
 
         ldr curr_i, [i]
-        mov min_index, i
-        mov min, curr_i
-        
-        add j, i, #4
 
-        inner:    
-            cmp j, last_byte
-            bge inner_exit
+        cmp curr_i, min
+        bge skip 
+            mov min_index, i
+            mov min, curr_i
+        skip:
 
-            ldr curr_j, [j]
-
-            cmp curr_j, min
-            bge not_min
-                // found new min
-                mov min, curr_j
-                mov min_index, j
-            not_min:
-                add j, j, #4
-        b inner
-        inner_exit:
-
-        // insert min into beginning of outer loop
-        str min, [i]
-        str curr_i, [min_index]
         add i, i, #4
-
-        
-        b outer
+    b outer
     
     exit:
-    
+        str min, [start]
     ret
