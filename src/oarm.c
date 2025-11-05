@@ -1,3 +1,5 @@
+#include "oarm.h"
+
 /*
 commands:
 <name> .req <register_name>
@@ -15,4 +17,31 @@ bgt <label_name>
 bge <label_name>
 */
 
-int execute_oarm(const char* code, int memory[1024]);
+typedef enum {
+  ADD,
+  MOV,
+  CMP,
+  LDR,
+  STR,
+  RET,
+  BGT,
+  BGE,
+  LABEL,
+  REG_ALIAS
+} StmtTypeT;
+
+int execute_oarm(const char* code, int memory[1024]) {
+  int registers[10] = {0};
+  int cmp_bit = 0;
+
+  return registers[0];
+  /*
+  Interpreter Stages:
+  - clean up whitespace, make all lower case
+  - go line by line, parse statements into tagged union and add to list
+      - store map of label name to index in list
+  - execute item by item in list, modifying register state, memory, and cmp
+  state with each cmd execution
+  - return with value in register[0] (x0)
+  */
+}
