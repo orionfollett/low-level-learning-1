@@ -25,6 +25,8 @@ _asm_sort:
     // x1 has list length
 
     // multiply length by 4 since we care about it in bytes
+    // say len is 3, that's actually 3 ints, which are each 4 bytes, so need
+    // to multiply by 4
     lsl x1, x1, #2
 
     // x1 now stores the address for the last byte in the array
@@ -37,10 +39,20 @@ _asm_sort:
         // outer loop list value
         ldr x2, [x0]
         
+        // x3 is min_value
+        mov x3, x2
+        
+        // x4 is min index
+        mov x4, x0
+
         // inner loop
-        inner: 
+        inner:
+            cmp 
+            
+        inner_exit:
 
-
+        // increment outer loop counter
+        add x0, x0, #4
     
     exit:
     
