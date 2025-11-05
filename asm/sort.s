@@ -29,8 +29,8 @@ _asm_sort:
         add j, i, #4
 
         inner:    
-            cmp last_byte, j
-            ble inner_exit
+            cmp j, last_byte
+            bge inner_exit
 
             ldr curr_j, [j]
 
@@ -40,8 +40,7 @@ _asm_sort:
                 mov min, curr_j
                 mov min_index, j
             not_min:
-
-            add j, j, #4
+                add j, j, #4
         b inner
         inner_exit:
 
@@ -50,6 +49,7 @@ _asm_sort:
         str curr_i, [min_index]
         add i, i, #4
 
+        
         b outer
     
     exit:
