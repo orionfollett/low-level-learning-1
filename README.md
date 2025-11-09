@@ -17,11 +17,6 @@
     - X Hash function
     - X List sorter
 
-3. ARM Emulator
-    - Emulate a subset of ARM assembly using C
-    - Rewrite assembly programs from above using emulator
-
-
 ### How to run
 
 Run C code:
